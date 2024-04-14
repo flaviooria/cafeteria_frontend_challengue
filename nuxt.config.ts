@@ -3,6 +3,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss", "nuxt-primevue"],
 
+  tailwindcss: {
+    cssPath: ["~/assets/css/tailwind.css", { injectPosition: "first" }],
+    configPath: "tailwind.config",
+  },
+
   primevue: {
     usePrimeVue: true,
     components: {
@@ -10,4 +15,9 @@ export default defineNuxtConfig({
     },
     cssLayerOrder: "tailwind-base, primevue, tailwind-utilities",
   },
+
+  css: [
+    "~/assets/css/tailwind.css",
+    "primevue/resources/themes/aura-light-green/theme.css",
+  ],
 });

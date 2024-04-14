@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>Hola Mundo</h1>
+  <div class="bg-background_first h-screen">
+    <h1 class="text-title_first">Hola Mundo</h1>
   </div>
 </template>
 
