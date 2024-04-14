@@ -13,6 +13,12 @@ export default defineNuxtConfig({
     components: {
       include: "*",
     },
+    directives: {
+      include: "*",
+    },
+    options: {
+      ripple: true,
+    },
     cssLayerOrder: "tailwind-base, primevue, tailwind-utilities",
   },
 
