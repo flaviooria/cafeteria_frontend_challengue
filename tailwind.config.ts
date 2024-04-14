@@ -23,6 +23,11 @@ export default <Partial<Config>>{
         cart_text_second: "#e8e4e6",
         text_links: "#f9bc60",
       },
+      fontFamily: {
+        title: ["var(--title)"],
+        subtitle: ["var(--subtitle)"],
+        paragraph: ["var(--text)"],
+      },
     },
   },
   plugins: [],
