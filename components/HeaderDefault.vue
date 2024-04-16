@@ -10,9 +10,6 @@
         <li class="cursor-pointer hover:text-background_first">Inicio</li>
         <li class="cursor-pointer hover:text-background_first">Productos</li>
         <li class="cursor-pointer hover:text-background_first">
-          Ofertas especiales
-        </li>
-        <li class="cursor-pointer hover:text-background_first">
           Sobre nosotros
         </li>
       </ul>
