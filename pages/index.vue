@@ -4,10 +4,10 @@
 
 <template>
   <div class="bg-background_first min-h-screen">
-    <main class="pt-[80px] flex flex-col">
-      <article class="flex md:justify-center gap-3 h-full">
+    <div class="pt-[80px] flex flex-col">
+      <div class="h-full flex md:justify-center gap-3 p-3 md:p-0">
         <div
-          class="w-full xl:w-[90%] flex flex-col md:flex-row justify-between gap-20 p-5 mt-10"
+          class="w-full xl:w-[90%] flex flex-col md:flex-row justify-between gap-20 mt-10"
         >
           <div class="w-full md:w-[40%]">
             <h1
@@ -28,7 +28,7 @@
             </p>
           </div>
           <div
-            class="w-full p-5 md:p-0 md:w-[60%] grid justify-center items-center grid-cols-6 grid-rows-6"
+            class="w-full md:p-0 md:w-[60%] grid justify-center items-center grid-cols-6 grid-rows-6"
           >
             <div class="box1 bg-background_second opacity-50 rounded-2xl"></div>
             <div class="box3">
@@ -43,7 +43,7 @@
             ></div>
           </div>
         </div>
-      </article>
+      </div>
       <div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
@@ -53,46 +53,83 @@
           ></path>
         </svg>
       </div>
-      <article class="bg-background_second p-5">
-        <div class="w-full">
-          <div class="w-full flex flex-col items-center justify-center">
+      <div class="bg-background_second flex flex-col">
+        <div class="w-full mb-5">
+          <div
+            class="w-full flex flex-col items-center justify-center px-4 text-center"
+          >
             <h2
-              class="font-subtitle text-[1.2rem] md:text-[2.5rem] text-title_second font-semibold"
+              class="font-subtitle text-[2rem] md:text-[2.5rem] text-title_second font-semibold"
             >
               Hecha un vistazo a los productos recientes
             </h2>
-            <p class="font-paragraph text-text_second text-lg">
+            <p class="font-paragraph text-text_second text-xl md:text-2xl my-3">
               Nuestros nuevos productos siempre hechos con la mejor calidad
             </p>
           </div>
-          <div class="flex justify-center mt-10 gap-10">
-            <div
-              class="rounded-2xl bg-card_background_second p-3 w-full md:w-[220px] h-[360px]"
-              v-for="_ in 4"
-            >
-              <div class="relative">
-                <Tag value="Nuevo" class="absolute top-0 right-0" />
-                <Image
-                  src="/images/producto_1.jpg"
-                  image-class="rounded-2xl w-full object-cover aspect-square"
-                />
-              </div>
-              <div
-                class="flex flex-col items-center mt-8 text-cart_title_second"
-              >
-                <span class="font-paragraph">Café</span>
-                <h3
-                  class="font-semibold font-subtitle text-cart_text_second text-lg"
-                >
-                  Leche Manchada
-                </h3>
-                <p class="font-paragraph text-cart_text_second">€ 2.50</p>
-              </div>
-            </div>
+          <div
+            class="flex flex-col items-center md:flex-row md:justify-center mt-10 gap-10 p-5"
+          >
+            <ProductCardRecent v-for="i in 4" :key="i" />
           </div>
         </div>
-      </article>
-    </main>
+      </div>
+      <div class="flex flex-col md:flex-row justify-center p-5">
+        <div
+          class="w-full h-2/4 md:h-[300px] md:w-[70%] flex flex-col md:flex-row md:justify-between rounded-[28px] bg-card_background_first p-5 my-5"
+        >
+          <div class="w-full md:w-[50%]">
+            <h2
+              class="font-subtitle text-[2rem] md:text-[2.5rem] text-cart_title_first"
+            >
+              Explora nuestros mejores productos y granos de café
+            </h2>
+            <div class="flex justify-start items-center p-5">
+              <Button
+                label="Ver más"
+                icon-pos="right"
+                icon="pi pi-arrow-right"
+                class="rounded-lg bg-button_background_first border-0 text-button_text_first"
+              />
+            </div>
+          </div>
+          <div class="w-full md:w-[50%] overflow-hidden">
+            <img
+              src="/images/coffee_2.jpg"
+              class="w-full h-full object-cover rounded-lg"
+              alt="Image coffee"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="bg-background_second flex flex-col">
+        <div class="w-full my-5">
+          <div
+            class="w-full flex flex-col items-center justify-center px-4 text-center"
+          >
+            <h2
+              class="font-subtitle text-[2rem] md:text-[2.5rem] text-title_second font-semibold"
+            >
+              Hecha un vistazo a nuestras ofertas
+            </h2>
+            <p class="font-paragraph text-text_second text-xl md:text-2xl my-3">
+              Nuevas ofertas cada mes, con los mejores descuentos
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center md:flex-row md:justify-center mt-10 gap-10 p-5"
+          >
+            <ProductCardRecent
+              v-for="i in 4"
+              :key="i"
+              tag="50 %"
+              :price-discount="1.5"
+              has-discount
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
