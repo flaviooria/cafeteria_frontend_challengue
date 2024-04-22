@@ -26,5 +26,6 @@ export default defineNuxtConfig({
     "~/assets/css/tailwind.css",
     "~/assets/css/styles.css",
     "primevue/resources/themes/aura-light-green/theme.css",
+    "primeicons/primeicons.css",
   ],
 });
